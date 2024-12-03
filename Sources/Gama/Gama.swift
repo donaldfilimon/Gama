@@ -1,7 +1,10 @@
 import Foundation
-import WinSDK
 
 // Helper extension for Windows UTF16 string conversion
+import WinSDK
+
+/// GameApp: Main entry point for the Windows-based game application
+/// Handles window creation and message processing
 extension String {
     var windowsUTF16: LPCWSTR {
         [WCHAR](self.utf16).withUnsafeBufferPointer { ptr in
@@ -13,8 +16,6 @@ extension String {
     }
 }
 
-/// GameApp: Main entry point for the Windows-based game application
-/// Handles window creation and message processing
 @main
 struct GameApp {
     // Add static constants for window configuration
